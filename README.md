@@ -20,22 +20,22 @@ Pluto.run()
 ```
 Then Pluto environment will open and select gold_price_pred.jl
 
-## Utils: 
-r2_score(y_true::AbstractVector{<:Real}, y_pred::AbstractVector{<:Real}) -> Float64
+#  Utils: 
+## r2_score(y_true::AbstractVector{<:Real}, y_pred::AbstractVector{<:Real}) -> Float64
 
 Compute the R² score (coefficient of determination) between the true values (`y_true`)
 and predicted values (`y_pred`).  
 The R² score measures how well the predictions approximate the actual data, with `1.0`
 being a perfect fit.
 
-# Arguments
+Arguments
 - `y_true` : Vector of true target values.
 - `y_pred` : Vector of predicted values.
 
-# Returns
+Returns
 - `Float64` : The R² score.
 
-# Examples
+Examples
 ```julia
 julia> y_true = [3.0, -0.5, 2.0, 7.0];
 julia> y_pred = [2.5, 0.0, 2.0, 8.0];
@@ -45,23 +45,23 @@ julia> r2_score(y_true, y_pred)
 julia> r2_score([1,2,3,4], [1.1,1.9,3.2,3.8])
 0.9899999999999999
 ```
-train_test_split(X::DataFrame, y::AbstractVector{<:Real}; frac::Float64=0.8, rng=Random.default_rng())
+## train_test_split(X::DataFrame, y::AbstractVector{<:Real}; frac::Float64=0.8, rng=Random.default_rng())
 
 Split a dataset into training and testing sets.
 
 By default, `frac=0.8` keeps 80% of the data for training and 20% for testing.
 The split is randomized but can be made reproducible by passing a random number generator via `rng`.
 
-# Arguments
+Arguments
 - `X` : DataFrame of features.
 - `y` : Vector of target values.
 - `frac` (keyword) : Fraction of the data to include in the training set (default = 0.8).
 - `rng` (keyword) : Random number generator (default = `Random.default_rng()`).
 
-# Returns
+Returns
 A tuple `(X_train, X_test, y_train, y_test)`.
 
-# Examples
+Examples
 ```julia
 julia> using DataFrames, Random
 
@@ -77,27 +77,27 @@ julia> length(y_train), length(y_test)
 (7, 3)
 ```
 
-train_models(X_train::DataFrame, y_train::Vector{<:Real}, X_test::DataFrame) -> Tuple{Vector{Float64}, Vector{Float64}}
+## train_models(X_train::DataFrame, y_train::Vector{<:Real}, X_test::DataFrame) -> Tuple{Vector{Float64}, Vector{Float64}}
 
 Train two regression models (Linear Regression and Random Forest) using MLJ, 
 fit them on the training set, and return predictions on the test set.
 
-# Arguments
+Arguments
 - `X_train` : DataFrame of training features.
 - `y_train` : Vector of training target values.
 - `X_test`  : DataFrame of testing features.
 
-# Returns
+Returns
 - `(y_pred_lin, y_pred_rf)` : A tuple of predicted values from:
   1. Linear Regression (`y_pred_lin`)
   2. Random Forest Regression (`y_pred_rf`)
 
-# Notes
+Notes
 - This function automatically handles conversion from `DataFrame` to `Matrix` 
   and back to ensure compatibility with MLJ.  
 - It raises an error if missing values are present.
 
-# Examples
+Examples
 ```julia
 julia> using DataFrames, MLJ, MLJLinearModels, DecisionTree
 
