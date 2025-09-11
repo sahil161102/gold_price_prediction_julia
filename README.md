@@ -1,6 +1,6 @@
 # Gold Price Prediction
 
-This package implements a simple machine learning pipeline in Julia to predict gold prices (GLD) using financial indicators (SPX, USO, SLV, EUR/USD).  
+This package implements a simple machine learning pipeline in Julia to predict gold prices using financial indicators (SPX, USO, SLV, GLD).  
 It includes functions for dataset handling, train-test splitting, model training, evaluation metrics, and visualization.
 
 ---
