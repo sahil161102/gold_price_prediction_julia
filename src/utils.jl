@@ -89,6 +89,8 @@ julia> length(y_train), length(y_test)
 (7, 3)
 """
 
+const lin_model = @load LinearRegressor pkg=MLJLinearModels verbosity=0
+const rf_model = @load RandomForestRegressor pkg=DecisionTree verbosity=0
 
 "Train Linear Regression & Random Forest models, return predictions"
 function train_models(X_train::DataFrame, y_train::Vector{<:Real}, X_test::DataFrame)
@@ -109,9 +111,9 @@ function train_models(X_train::DataFrame, y_train::Vector{<:Real}, X_test::DataF
     X_train_df = DataFrame(X_train_mat, :auto)
     X_test_df = DataFrame(X_test_mat, :auto)
     
-    # Use eval to work around world age issue
-    lin_model = @eval @load LinearRegressor pkg=MLJLinearModels verbosity=0
-    rf_model = @eval @load RandomForestRegressor pkg=DecisionTree verbosity=0
+    
+    # lin_model = Base.invokelatest(() -> @load LinearRegressor pkg=MLJLinearModels verbosity=0)
+    # rf_model = Base.invokelatest(() -> @load RandomForestRegressor pkg=DecisionTree verbosity=0)
     
     lin_mach = MLJ.machine(lin_model(), X_train_df, y_train)
     MLJ.fit!(lin_mach)

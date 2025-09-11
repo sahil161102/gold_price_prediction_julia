@@ -182,6 +182,14 @@ begin
 	)
 end
 
+# ╔═╡ 5e1c99e4-3d97-48fd-b8ef-8033b0d7f591
+md"""
+Drop SLV column since it's highly correlated with GLD 
+"""
+
+# ╔═╡ 0c275950-70d2-417d-a2bf-8a8227d49c78
+
+
 # ╔═╡ ed90a6a4-61b9-47a8-b1d8-e057106f1247
 begin
     # Drop SLV column since it's highly correlated with GLD
@@ -193,6 +201,11 @@ begin
 
     first(df, 5)   # show first 5 rows after dropping
 end
+
+# ╔═╡ fa798245-aec9-4a71-a825-f351f32458b1
+md"""
+ ### Gold Price Trend
+"""
 
 # ╔═╡ bfa3edc0-8fee-459d-bf34-d905c5f1353b
 begin
@@ -210,6 +223,16 @@ begin
         color=:blue
     )
 end
+
+# ╔═╡ 43923f3f-60d3-4aab-b10a-ebc28e00f451
+md"""
+### Smoothed Gold Price Trend 
+"""
+
+# ╔═╡ 0b567599-d057-4d04-a737-688aacaa5a00
+md"""
+### Histogram Plots and sqewness check 
+"""
 
 # ╔═╡ 313556d4-417c-4638-993e-0d9d0255d21d
 begin
@@ -229,6 +252,14 @@ begin
         println("$(col): $(round(val, digits=2))")
     end
 end
+
+# ╔═╡ 4eca59e6-f1d1-4f16-9e8b-b57c86f04330
+md"""
+Column USO has the highest skewness, so here we will apply square root transformation on this column to reduce its skewness to 0
+"""
+
+# ╔═╡ d2d39d41-0e55-49f9-9a74-da38f7964e69
+
 
 # ╔═╡ 95153f37-38ca-4576-9cf3-14355dbeee33
 begin
@@ -303,15 +334,9 @@ begin
 end
 
 
-# ╔═╡ 5bf814d4-98b0-4a80-b02b-36b0e8828207
-"""
-If some bug arise here, try reruning code cell 2 to reload the utils.
-"""
-
-
 # ╔═╡ 4d1f15b9-2098-454d-bbfe-a9ad8978172c
 begin
-    # Predictions on training data
+
     y_pred_train_lin, y_pred_train_rf = train_models(X_train, y_train, X_train)
 
     # Create scatter plot with proper labels
@@ -342,21 +367,31 @@ begin
     plot!(legend=:topleft)
 end
 
+# ╔═╡ 6e7b35fc-1eb3-49b3-915c-a63b01f6c4c3
+
+
 # ╔═╡ Cell order:
 # ╠═a60f1ce0-892c-11f0-2805-ed8eb3b20852
-# ╠═a7d4bbc4-09b1-432f-957a-f0dff3e56661
+# ╟─a7d4bbc4-09b1-432f-957a-f0dff3e56661
 # ╠═b09606bf-4fc8-47ca-bf13-7b89ca0e1391
 # ╠═b617fd78-bd35-47c1-b0ae-c4f88e21d524
-# ╠═1e0103c3-900c-4888-b9e8-3b1dc2aa5741
-# ╟─2247b467-bcc6-4eab-8ab8-50504ad46650
+# ╟─1e0103c3-900c-4888-b9e8-3b1dc2aa5741
+# ╠═2247b467-bcc6-4eab-8ab8-50504ad46650
 # ╠═0c1a1335-d810-431c-87ae-c94f6c8075d0
 # ╠═a454b789-7e88-4e34-aaf8-d6c15127fa3e
 # ╠═48df40b0-30c7-4e29-a0b6-27782ee3c60a
+# ╟─5e1c99e4-3d97-48fd-b8ef-8033b0d7f591
+# ╠═0c275950-70d2-417d-a2bf-8a8227d49c78
 # ╠═ed90a6a4-61b9-47a8-b1d8-e057106f1247
+# ╟─fa798245-aec9-4a71-a825-f351f32458b1
 # ╠═bfa3edc0-8fee-459d-bf34-d905c5f1353b
+# ╟─43923f3f-60d3-4aab-b10a-ebc28e00f451
 # ╠═1e41ece5-6f56-43c4-b8c0-7874ee647fdd
+# ╟─0b567599-d057-4d04-a737-688aacaa5a00
 # ╠═65854fcf-fdb7-4f39-a68b-88c12ac9631e
 # ╠═313556d4-417c-4638-993e-0d9d0255d21d
+# ╟─4eca59e6-f1d1-4f16-9e8b-b57c86f04330
+# ╠═d2d39d41-0e55-49f9-9a74-da38f7964e69
 # ╠═95153f37-38ca-4576-9cf3-14355dbeee33
 # ╟─7722c1d3-ee31-4a07-be5b-68b7aa49ba75
 # ╠═05490d22-7d62-42b8-94e0-fc9db459547b
@@ -366,5 +401,5 @@ end
 # ╠═97467d9f-3822-4fd3-9f36-a631b0adf8bb
 # ╟─853d7e98-efbd-4ad6-8cdf-0ab7f9f51d55
 # ╠═bd57314a-fc4e-43fe-8702-c66eb17a627e
-# ╟─5bf814d4-98b0-4a80-b02b-36b0e8828207
 # ╠═4d1f15b9-2098-454d-bbfe-a9ad8978172c
+# ╠═6e7b35fc-1eb3-49b3-915c-a63b01f6c4c3
