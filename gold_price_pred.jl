@@ -313,8 +313,6 @@ md"""
 # ╔═╡ 853d7e98-efbd-4ad6-8cdf-0ab7f9f51d55
 md"""
 ### Model Training
-
-If some bug arise here, try reruning code cell 2 to reload the utils. Or you may ignore this and check the final output
 """
 
 # ╔═╡ bd57314a-fc4e-43fe-8702-c66eb17a627e
