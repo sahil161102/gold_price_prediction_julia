@@ -14,5 +14,8 @@ From the project root folder (where `Project.toml` lives), open Julia and run:
 using Pkg
 Pkg.activate(".")
 Pkg.instantiate()
+
+using Pluto
+Pluto.run()
 ```
-Then choose gold_price_pred.jl
+Then Pluto environment will open and select gold_price_pred.jl
