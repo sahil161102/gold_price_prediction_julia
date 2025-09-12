@@ -7,7 +7,8 @@ It includes functions for dataset handling, data cleaning and preprocessing, tra
 
 ## 🚀 Getting Started
 
-### 1. Activate and instantiate the environment
+### Activate and instantiate the environment
+First clone/download the project from github.
 From the project root folder (where `Project.toml` lives), open Julia and run:
 
 ```julia
@@ -18,7 +19,8 @@ Pkg.instantiate()
 using Pluto
 Pluto.run()
 ```
-Then Pluto environment will open and select gold_price_pred.jl
+Then Pluto environment will open and select gold_price_pred.jl. 
+Run the complete notebook to see the results.
 
 #  Utils: 
 ## r2_score(y_true::AbstractVector{<:Real}, y_pred::AbstractVector{<:Real}) -> Float64
