@@ -1,6 +1,6 @@
 # Gold Price Prediction
 
-This package implements a simple machine learning pipeline in Julia to predict gold prices using financial indicators (SPX, USO, SLV, GLD).  
+This ia a data analytics pipeline in Julia to predict gold prices using financial indicators (SPX, USO, SLV, GLD).  
 It includes functions for dataset handling, data cleaning and preprocessing, train-test splitting, model training, evaluation metrics, and visualization.
 
 ---
@@ -113,3 +113,16 @@ julia> length(y_pred_lin), length(y_pred_rf)
 julia> typeof(y_pred_lin), typeof(y_pred_rf)
 (Vector{Float64}, Vector{Float64})
 ```
+# Contributing
+Want to contribute? Please fork this repository and submit a pull request!
+
+# License
+MIT License
+
+Copyright (c) 2025 Sahil
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
