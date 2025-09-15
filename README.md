@@ -22,6 +22,13 @@ Pluto.run()
 Then Pluto environment will open and select gold_price_pred.jl. 
 Run the complete notebook to see the results.
 
+# Results:
+Model evaluation:
+<img width="1296" height="269" alt="image" src="https://github.com/user-attachments/assets/e22b20a7-503c-49ce-beb3-299454280a8f" />
+
+<img width="1214" height="807" alt="image" src="https://github.com/user-attachments/assets/55fd0752-da3b-4127-8ca9-75c810e7f449" />
+
+
 #  Utils: 
 ## r2_score(y_true::AbstractVector{<:Real}, y_pred::AbstractVector{<:Real}) -> Float64
 
